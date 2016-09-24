@@ -66,11 +66,11 @@ function EditableFieldController() {
 
 angular.module('my-heros', [])
         .component('heroList', {
-            templateUrl: '../my_components/hero-component/views/heroList.html',
+            templateUrl: '../bower_components/hero-component/views/heroList.html',
             controller: HeroListController
         })
         .component('heroDetail', {
-            templateUrl: '../my_components/hero-component/views/heroDetails.html',
+            templateUrl: '../bower_components/hero-component/views/heroDetails.html',
             controller: HeroDetailController,
             bindings: {
                 hero: '<',
@@ -79,7 +79,7 @@ angular.module('my-heros', [])
             }
         })
         .component('editableField', {
-            templateUrl: '../my_components/hero-component/views/editableField.html',
+            templateUrl: '../bower_components/hero-component/views/editableField.html',
             controller: EditableFieldController,
             bindings: {
                 fieldValue: '<',
