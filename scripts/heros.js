@@ -5,11 +5,18 @@ function HeroListController($scope, $element, $attrs) {
     ctrl.list = [
         {
             name: 'Superman',
-            location: ''
+            location: 'Krypton',
+            universe: 'DC'
         },
         {
             name: 'Batman',
-            location: 'Wayne Manor'
+            location: 'Wayne Manor',
+            universe: 'DC'
+        },
+        {
+            name: 'Captain Amarica',
+            location: 'US',
+            universe: 'Marvel'
         }
     ];
 
