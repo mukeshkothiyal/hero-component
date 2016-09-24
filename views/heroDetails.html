@@ -1,8 +1,11 @@
 <hr>
-<div>
-    Name: {{$ctrl.hero.name}}<br>
-    Location:
-    <editable-field field-value="$ctrl.hero.location" field-type="text" on-update="$ctrl.update('location', value)"></editable-field>
-    <br>
-    <button ng-click="$ctrl.delete()">Delete</button>
+<div class="col-xs-12 col-sm-9">
+    <form class="form-horizontal">
+        <h3 class="media-heading"> Name: {{$ctrl.hero.name}}</h3>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Location:</label>
+            <editable-field field-value="$ctrl.hero.location" field-type="text" on-update="$ctrl.update('location', value)"></editable-field>
+        </div>
+        <button class="btn btn-xs btn-primary pull-left" ng-click="$ctrl.delete()">Delete</button>
+    </form>
 </div>

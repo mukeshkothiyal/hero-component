@@ -1,2 +1,9 @@
-<b>Heroes</b><br>
-<hero-detail ng-repeat="hero in $ctrl.list" hero="hero" on-delete="$ctrl.deleteHero(hero)" on-update="$ctrl.updateHero(hero, prop, value)"></hero-detail>
+<h2>Heroes</h2>
+<div class="col-xs-12">
+    <ul class="media-list tab-pane fade in active">
+        <li class="media" ng-repeat="hero in $ctrl.list">
+            <hero-detail hero="hero" on-delete="$ctrl.deleteHero(hero)" on-update="$ctrl.updateHero(hero, prop, value)"></hero-detail>
+        </li>
+    </ul>
+</div>
+</div>
