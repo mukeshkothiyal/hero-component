@@ -1,0 +1,27 @@
+{
+  "name": "hero-component",
+  "description": "All defender of the earth you can find here",
+  "homepage": "https://github.com/mukeshkothiyal/hero-component",
+  "main": "./scripts/heros.js",
+  "authors": [
+    "mukeshkk"
+  ],
+  "license": "MKK",
+  "homepage": "",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mukeshkothiyal/hero-component.git"
+  },
+  "resolutions": {
+    "angular": "1.0.0-beta.1"
+  },
+  "ignore": [".gitignore"]
+}
