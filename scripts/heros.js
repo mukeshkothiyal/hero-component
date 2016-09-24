@@ -4,19 +4,25 @@ function HeroListController($scope, $element, $attrs) {
     // This would be loaded by $http etc.
     ctrl.list = [
         {
+            id: 1,
             name: 'Superman',
             location: 'Krypton',
-            universe: 'DC'
+            universe: 'DC',
+            image: '../bower_components/hero-component/images/superman.jpg'
         },
         {
+            id: 2,
             name: 'Batman',
             location: 'Wayne Manor',
-            universe: 'DC'
+            universe: 'DC',
+            image: '../bower_components/hero-component/images/batman.png'
         },
         {
+            id: 3,
             name: 'Captain Amarica',
             location: 'US',
-            universe: 'Marvel'
+            universe: 'Marvel',
+            image: '../bower_components/hero-component/images/captainamerica.jpg'
         }
     ];
 

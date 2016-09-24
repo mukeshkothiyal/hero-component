@@ -1,6 +1,6 @@
 <h2>Heroes</h2>
 <div class="col-xs-12">
-    <ul class="media-list tab-pane fade in active">
+    <ul class="media-list">
         <li class="media" ng-repeat="hero in $ctrl.list">
             <hero-detail hero="hero" on-delete="$ctrl.deleteHero(hero)" on-update="$ctrl.updateHero(hero, prop, value)"></hero-detail>
         </li>
