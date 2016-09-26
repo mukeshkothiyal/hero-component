@@ -21,8 +21,10 @@ function HeroListController($scope, $element, $attrs, heroFactory) {
     };
 }
 
-function HeroDetailController() {
+function HeroDetailController(baseURL) {
     var ctrl = this;
+
+    ctrl.baseURL = baseURL;
 
     ctrl.delete = function () {
         ctrl.onDelete({hero: ctrl.hero});
