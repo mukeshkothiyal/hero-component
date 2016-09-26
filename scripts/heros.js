@@ -1,30 +1,13 @@
-function HeroListController($scope, $element, $attrs) {
+function HeroListController($scope, $element, $attrs, heroFactory) {
     var ctrl = this;
-
-    // This would be loaded by $http etc.
-    ctrl.list = [
-        {
-            id: 1,
-            name: 'Superman',
-            location: 'Krypton',
-            universe: 'DC',
-            image: '../bower_components/hero-component/images/superman.jpg'
-        },
-        {
-            id: 2,
-            name: 'Batman',
-            location: 'Wayne Manor',
-            universe: 'DC',
-            image: '../bower_components/hero-component/images/batman.png'
-        },
-        {
-            id: 3,
-            name: 'Captain Amarica',
-            location: 'US',
-            universe: 'Marvel',
-            image: '../bower_components/hero-component/images/captainamerica.jpg'
-        }
-    ];
+    ctrl.list = heroFactory.getHeros().query(
+            function (response) {
+                ctrl.list = response;
+            },
+            function (response) {
+                $scope.message = "Error: " + response.status + " " + response.statusText;
+            }
+    );
 
     ctrl.updateHero = function (hero, prop, value) {
         hero[prop] = value;
@@ -77,7 +60,18 @@ function EditableFieldController() {
     };
 }
 
+function heroFactory($resource, baseURL) {
+    var heroFac = {};
+    heroFac.getHeros = function () {
+        return $resource(baseURL + "heros/:id", null, {'update': {method: 'PUT'}});
+    }
+    return heroFac;
+}
+
 angular.module('my-heros', [])
+        // should be overridden within application's main module to provide app-specific service
+        .constant("baseURL", "http://localhost:3000/")
+        .factory('heroFactory', heroFactory)
         .component('heroList', {
             templateUrl: '../bower_components/hero-component/views/heroList.html',
             controller: HeroListController
